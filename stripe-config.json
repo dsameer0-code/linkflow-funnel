@@ -1,0 +1,105 @@
+{
+  "_note": "Create these 3 products in Stripe Dashboard → Products → Add Product, then create Payment Links for each. Replace YOUR_VERCEL_DOMAIN throughout.",
+  "_operator": "NextGen Web LLC — sdhawan1971@gmail.com",
+  "_stripe_dashboard": "https://dashboard.stripe.com/payment-links",
+
+  "products": [
+    {
+      "stripe_product_name": "LinkFlow Pro",
+      "description": "Lifetime access to LinkFlow Pro — unlimited bio pages, links, analytics, custom domains, commercial license",
+      "price_amount_cents": 9700,
+      "currency": "usd",
+      "payment_type": "one_time",
+      "tax_behavior": "exclusive",
+
+      "payment_link_settings": {
+        "success_url": "https://YOUR_VERCEL_DOMAIN/upsell",
+        "cancel_url": "https://YOUR_VERCEL_DOMAIN/sales",
+        "_note_success": "IMPORTANT: Success URL goes to /upsell (OTO page), NOT /thankyou — buyer sees upsell offer after purchase",
+        "_note_cancel": "Cancel returns to sales page so buyer can reconsider"
+      },
+
+      "metadata": {
+        "funnel_step": "frontend",
+        "product_slug": "linkflow-pro-fe",
+        "jvzoo_tag": "linkflow-pro-buyer"
+      },
+
+      "placeholder_var": "STRIPE_PAYMENT_LINK_FRONTEND",
+      "replace_in_files": ["sales/index.html"]
+    },
+    {
+      "stripe_product_name": "LinkFlow Agency License",
+      "description": "25 client accounts, white-label branding, client reporting, agency training, DFY onboarding templates",
+      "price_amount_cents": 19700,
+      "currency": "usd",
+      "payment_type": "one_time",
+      "tax_behavior": "exclusive",
+
+      "payment_link_settings": {
+        "success_url": "https://YOUR_VERCEL_DOMAIN/thankyou-agency",
+        "cancel_url": "https://YOUR_VERCEL_DOMAIN/downsell",
+        "_note_success": "Accept OTO1 → /thankyou-agency",
+        "_note_cancel": "Decline OTO1 → /downsell (show DS1 offer)"
+      },
+
+      "metadata": {
+        "funnel_step": "upsell_oto1",
+        "product_slug": "linkflow-agency",
+        "jvzoo_tag": "linkflow-agency-buyer"
+      },
+
+      "placeholder_var": "STRIPE_PAYMENT_LINK_UPSELL",
+      "replace_in_files": ["upsell/index.html"]
+    },
+    {
+      "stripe_product_name": "LinkFlow Accelerator Pack",
+      "description": "DFY page templates, conversion optimization audit, advanced analytics masterclass",
+      "price_amount_cents": 4700,
+      "currency": "usd",
+      "payment_type": "one_time",
+      "tax_behavior": "exclusive",
+
+      "payment_link_settings": {
+        "success_url": "https://YOUR_VERCEL_DOMAIN/thankyou-starter",
+        "cancel_url": "https://YOUR_VERCEL_DOMAIN/thankyou",
+        "_note_success": "Accept DS1 → /thankyou-starter",
+        "_note_cancel": "Decline DS1 → /thankyou (base confirmation, they still have FE)"
+      },
+
+      "metadata": {
+        "funnel_step": "downsell_ds1",
+        "product_slug": "linkflow-accelerator",
+        "jvzoo_tag": "linkflow-accelerator-buyer"
+      },
+
+      "placeholder_var": "STRIPE_PAYMENT_LINK_DOWNSELL",
+      "replace_in_files": ["downsell/index.html"]
+    }
+  ],
+
+  "global_stripe_settings": {
+    "collect_billing_address": false,
+    "collect_phone_number": false,
+    "allow_promotion_codes": false,
+    "automatic_tax": false,
+    "after_payment": "redirect"
+  },
+
+  "setup_steps": [
+    "1. Go to: dashboard.stripe.com → Products → + Add product",
+    "2. Create LinkFlow Pro: $97 one-time, name + description from above",
+    "3. Click 'Create payment link' → set Success URL to YOUR_VERCEL_DOMAIN/upsell",
+    "4. Copy payment link URL — paste into sales/index.html replacing STRIPE_PAYMENT_LINK_FRONTEND",
+    "5. Repeat for Agency License ($197) — Success URL: /thankyou-agency, Cancel: /downsell",
+    "6. Repeat for Accelerator Pack ($47) — Success URL: /thankyou-starter, Cancel: /thankyou",
+    "7. Do NOT use test mode links in production — use live keys (sk_live_...)"
+  ],
+
+  "find_and_replace_guide": {
+    "STRIPE_PAYMENT_LINK_FRONTEND": "Paste your $97 Stripe payment link here (e.g. https://buy.stripe.com/...)",
+    "STRIPE_PAYMENT_LINK_UPSELL": "Paste your $197 Stripe payment link here",
+    "STRIPE_PAYMENT_LINK_DOWNSELL": "Paste your $47 Stripe payment link here",
+    "YOUR_VERCEL_DOMAIN": "Your actual Vercel URL (e.g. linkflow-funnel.vercel.app)"
+  }
+}

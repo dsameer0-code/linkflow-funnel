@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before You Go — One Last Offer for LinkFlow Pro Members</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1120;
+    --electric: #4F8EFF;
+    --teal: #00D4B4;
+    --rose: #F43F5E;
+    --white: #FFFFFF;
+    --muted: #94A3B8;
+    --surface: #1A2235;
+    --border: rgba(255,255,255,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); min-height: 100vh; }
+
+  .top-bar {
+    background: linear-gradient(135deg, var(--teal), var(--electric));
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+
+  .eyebrow {
+    display: inline-block;
+    background: rgba(244,63,94,0.15);
+    border: 1px solid rgba(244,63,94,0.4);
+    color: var(--rose);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  h1 .teal { color: var(--teal); }
+  h1 .rose { color: var(--rose); }
+  .subhead { font-size: 18px; color: #CBD5E1; line-height: 1.6; margin-bottom: 44px; }
+
+  .ds-card {
+    background: var(--surface);
+    border: 2px solid var(--teal);
+    border-radius: 20px;
+    padding: 40px 36px;
+    margin-bottom: 32px;
+    text-align: left;
+    box-shadow: 0 0 48px rgba(0,212,180,0.12);
+    position: relative;
+  }
+  .ds-badge {
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--teal);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 18px;
+    border-radius: 30px;
+    white-space: nowrap;
+  }
+  .ds-card h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .ds-card .pitch { text-align: center; color: #CBD5E1; font-size: 16px; margin-bottom: 28px; }
+
+  .ds-features { list-style: none; margin-bottom: 28px; }
+  .ds-features li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+  .ds-features li:last-child { border-bottom: none; }
+  .ds-features li::before { content: '✓'; color: var(--teal); font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  .comparison {
+    background: rgba(0,212,180,0.06);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+  .comparison .row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,212,180,0.1); }
+  .comparison .row:last-child { border-bottom: none; }
+  .comparison .row .label { color: var(--muted); }
+  .comparison .row .val-no { color: #FCA5A5; }
+  .comparison .row .val-yes { color: var(--teal); font-weight: 700; }
+
+  .ds-price { text-align: center; margin-bottom: 28px; }
+  .ds-price .was { color: var(--muted); font-size: 17px; text-decoration: line-through; margin-bottom: 6px; }
+  .ds-price .now { font-size: 72px; font-weight: 800; line-height: 1; color: var(--white); }
+  .ds-price .now sup { font-size: 28px; vertical-align: super; }
+  .ds-price .type { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+  .btn-ds {
+    display: block;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--electric) 100%);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 20px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 8px 28px rgba(0,212,180,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-ds:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,212,180,0.5); }
+  .btn-ds .sub { display: block; font-size: 13px; font-weight: 600; opacity:0.85; font-family:'Barlow',sans-serif; text-transform:none; letter-spacing:0; margin-top:4px; }
+
+  .skip { text-align: center; margin-top: 24px; }
+  .skip a { color: var(--muted); font-size: 14px; text-decoration: none; border-bottom: 1px dashed var(--muted); }
+  .skip a:hover { color: var(--electric); }
+
+  .guarantee-mini {
+    display: flex; gap: 14px; align-items: center;
+    background: rgba(0,212,180,0.06);
+    border: 1px solid rgba(0,212,180,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .guarantee-mini .seal {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--electric));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    color: var(--navy);
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  footer { text-align: center; padding: 28px 20px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); text-decoration: none; margin: 0 8px; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">✓ Your LinkFlow Pro Order Is Confirmed — Check Your Email</div>
+
+<div class="container">
+  <div class="eyebrow">Wait — Special Discount Unlocked</div>
+  <h1>
+    We Heard You.<br>Here's a <span class="teal">Better Deal</span><br>Before You Leave
+  </h1>
+  <p class="subhead">
+    Not ready for the full agency license? No problem. We've unlocked a special one-time discount on the LinkFlow Starter upgrade — everything you need to go professional, at half the price.
+  </p>
+
+  <div class="ds-card">
+    <div class="ds-badge">🎁 Exclusive Downsell — Not Available Anywhere Else</div>
+    <h2>LinkFlow Pro Accelerator Pack</h2>
+    <p class="pitch">Get three power upgrades that 10X your results — available only on this page, only right now.</p>
+
+    <ul class="ds-features">
+      <li><strong>DFY Page Templates Pack</strong> — 12 done-for-you, niche-specific bio page templates (coaches, consultants, creators, local biz). Import in one click and customize in minutes.</li>
+      <li><strong>Conversion Optimization Audit</strong> — Step-by-step video walkthrough showing exactly how to configure your LinkFlow pages for maximum click-through and conversion. Includes split-testing framework.</li>
+      <li><strong>Advanced Analytics Masterclass</strong> — 90-minute training on reading your data, identifying what's working, and doubling down. Turn numbers into decisions.</li>
+    </ul>
+
+    <div class="comparison">
+      <div class="row"><span class="label">Starter Templates (free tier)</span><span class="val-no">6 basic designs</span></div>
+      <div class="row"><span class="label">Accelerator Pack Templates</span><span class="val-yes">18 pro designs</span></div>
+      <div class="row"><span class="label">Analytics Access</span><span class="val-yes">+ Masterclass Training</span></div>
+      <div class="row"><span class="label">Conversion Training</span><span class="val-yes">✓ Included</span></div>
+    </div>
+
+    <div class="ds-price">
+      <div class="was">Regular Price: $97</div>
+      <div class="now"><sup>$</sup>47</div>
+      <div class="type">One-time add-on to your LinkFlow Pro order</div>
+    </div>
+
+    <a href="STRIPE_PAYMENT_LINK_DOWNSELL" class="btn-ds">
+      Yes — Add the Accelerator Pack for $47 →
+      <span class="sub">One-time charge. Instant access. No recurring fees.</span>
+    </a>
+
+    <div class="guarantee-mini">
+      <div class="seal"><div>30</div><div>DAY</div><div>GUARANTEE</div></div>
+      <div>Protected by our 30-day money-back guarantee. If it's not everything we say, we refund every penny. No risk.</div>
+    </div>
+  </div>
+
+  <div class="skip">
+    <a href="../thankyou/">No thanks — I'll skip this and proceed to my LinkFlow Pro access</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LinkFlow Pro | <a href="../compliance/">Earnings Disclaimer</a> <a href="../compliance/#privacy">Privacy</a> <a href="../compliance/#terms">Terms</a>
+</footer>
+</body>
+</html>

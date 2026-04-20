@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency License Activated — Welcome to LinkFlow Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1120; --electric: #4F8EFF; --teal: #00D4B4;
+    --amber: #F59E0B; --green: #22C55E; --gold: #F59E0B;
+    --white: #FFFFFF; --muted: #94A3B8;
+    --surface: #1A2235; --border: rgba(255,255,255,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); }
+
+  .header {
+    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(79,142,255,0.1));
+    border-bottom: 1px solid rgba(245,158,11,0.2);
+    padding: 44px 20px 40px;
+    text-align: center;
+  }
+  .badge-wrap {
+    display: flex; justify-content: center; margin-bottom: 20px;
+  }
+  .agency-seal {
+    background: linear-gradient(135deg, var(--gold), #D97706);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 900;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 8px 24px; border-radius: 40px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 0 32px rgba(245,158,11,0.35);
+  }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(28px, 5vw, 52px); font-weight: 900; text-transform: uppercase; line-height: 1.05; margin-bottom: 14px; }
+  h1 .gold { color: var(--gold); }
+  .sub { font-size: 18px; color: #CBD5E1; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+
+  .container { max-width: 740px; margin: 0 auto; padding: 52px 20px 72px; }
+
+  /* AGENCY ACCESS BOX */
+  .access-box {
+    background: var(--surface);
+    border: 2px solid rgba(245,158,11,0.35);
+    border-radius: 16px; padding: 36px;
+    margin-bottom: 32px;
+    box-shadow: 0 0 48px rgba(245,158,11,0.08);
+  }
+  .access-box h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .steps { display: flex; flex-direction: column; gap: 14px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .step-num { width: 38px; height: 38px; flex-shrink: 0; background: linear-gradient(135deg, var(--gold), #D97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: var(--navy); }
+  .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .step .action-btn { display: inline-block; margin-top: 10px; background: linear-gradient(135deg, var(--gold), #D97706); color: var(--navy); font-size: 12px; font-weight: 800; text-decoration: none; padding: 7px 16px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.06em; transition: transform 0.15s; }
+  .step .action-btn:hover { transform: translateY(-1px); }
+
+  /* AGENCY FEATURES UNLOCKED */
+  .unlocked-box {
+    background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.04));
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 14px; padding: 30px;
+    margin-bottom: 32px;
+  }
+  .unlocked-box h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .feat-item { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+  .feat-item::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* QUICK START */
+  .quickstart {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px; margin-bottom: 32px;
+  }
+  .quickstart h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; text-transform: uppercase; color: var(--electric); margin-bottom: 18px; }
+  .qs-item { display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .qs-item:last-child { border-bottom: none; }
+  .qs-num { color: var(--electric); font-weight: 700; flex-shrink: 0; }
+
+  /* SUPPORT */
+  .support-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+  .support-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .support-box p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .support-box a { color: var(--electric); text-decoration: none; font-weight: 600; }
+
+  footer { text-align: center; padding: 28px 20px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); text-decoration: none; margin: 0 8px; }
+
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 32px rgba(245,158,11,0.35); } 50% { box-shadow: 0 0 52px rgba(245,158,11,0.6); } }
+  .agency-seal { animation: pulse 2.5s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge-wrap">
+    <div class="agency-seal">🏆 Agency License — Activated</div>
+  </div>
+  <h1>Welcome to <span class="gold">LinkFlow Agency</span></h1>
+  <p class="sub">Your agency license is live. You now have full authority to deploy and bill for link management services under your own brand.</p>
+</div>
+
+<div class="container">
+
+  <div class="access-box">
+    <h2>📧 Access Your Agency Dashboard</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Check Email — Agency Credentials</h3>
+          <p>A separate agency onboarding email is on its way from <strong>agency@linkflow.io</strong>. Contains your master dashboard login and white-label setup guide.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Access Agency Master Dashboard</h3>
+          <p>Your agency dashboard is separate from the standard member portal — it gives you visibility across all 25 client accounts from one screen.</p>
+          <a href="https://agency.linkflow.io/login" class="action-btn" target="_blank">→ Agency Dashboard</a>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Download Your Agency Playbook</h3>
+          <p>The Agency Playbook covers pricing your service ($500–$2,000/month), client onboarding SOPs, pitch deck template, and first 30 days execution plan.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Create Your First Client Account</h3>
+          <p>Agency dashboard → Clients → New Client. Takes under 3 minutes. Your first client can be live within the hour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unlocked-box">
+    <h2>🔓 What's Unlocked With Your Agency License</h2>
+    <div class="features-grid">
+      <div class="feat-item">25 client accounts</div>
+      <div class="feat-item">White-label branding</div>
+      <div class="feat-item">Client reporting suite</div>
+      <div class="feat-item">Agency training & SOPs</div>
+      <div class="feat-item">DFY onboarding templates</div>
+      <div class="feat-item">Priority support (4hr SLA)</div>
+      <div class="feat-item">Contract templates</div>
+      <div class="feat-item">Client pitch deck</div>
+      <div class="feat-item">Pricing guide ($500–$2K/mo)</div>
+      <div class="feat-item">Fulfillment checklists</div>
+    </div>
+  </div>
+
+  <div class="quickstart">
+    <h2>⚡ Agency Quick-Start Checklist</h2>
+    <div class="qs-item"><span class="qs-num">1.</span><span>Log into agency dashboard, set up white-label name + logo</span></div>
+    <div class="qs-item"><span class="qs-num">2.</span><span>Download pitch deck template from Members Area → Agency Tools</span></div>
+    <div class="qs-item"><span class="qs-num">3.</span><span>Set your service pricing (use the pricing guide — recommended: $750/mo per client)</span></div>
+    <div class="qs-item"><span class="qs-num">4.</span><span>Identify first 3 prospects (existing clients, warm network, LinkedIn outreach)</span></div>
+    <div class="qs-item"><span class="qs-num">5.</span><span>Create a demo account for yourself — use it as a portfolio piece</span></div>
+    <div class="qs-item"><span class="qs-num">6.</span><span>Close first client. Follow the onboarding SOP. Deliver in under 1 hour.</span></div>
+  </div>
+
+  <div class="support-box">
+    <h3>Agency Priority Support</h3>
+    <p>Agency members get a dedicated support queue with 4-hour response SLA on business days.<br>
+    📧 <a href="mailto:agency@linkflow.io">agency@linkflow.io</a> — Include "AGENCY" in your subject line for priority routing.</p>
+    <p style="margin-top:10px; font-size:12px; color:var(--muted);">Keep your JVZoo receipt — it's your license proof if you ever need to re-authenticate.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 LinkFlow Pro · NextGen Web LLC
+  <br style="margin-top:6px;">
+  <a href="../compliance/">Earnings Disclaimer</a>
+  <a href="../compliance/#privacy">Privacy Policy</a>
+  <a href="../compliance/#terms">Terms of Service</a>
+  <a href="mailto:agency@linkflow.io">Agency Support</a>
+</footer>
+
+</body>
+</html>

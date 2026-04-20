@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/", "dest": "/sales/index.html" },
+    { "src": "/sales", "dest": "/sales/index.html" },
+    { "src": "/upsell", "dest": "/upsell/index.html" },
+    { "src": "/downsell", "dest": "/downsell/index.html" },
+    { "src": "/bonus", "dest": "/bonus/index.html" },
+    { "src": "/thankyou", "dest": "/thankyou/index.html" },
+    { "src": "/thankyou-agency", "dest": "/thankyou-agency/index.html" },
+    { "src": "/thankyou-starter", "dest": "/thankyou-starter/index.html" },
+    { "src": "/compliance", "dest": "/compliance/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

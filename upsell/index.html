@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAIT — Unlock the Agency License Before You Access LinkFlow Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1120;
+    --navy2: #111827;
+    --electric: #4F8EFF;
+    --teal: #00D4B4;
+    --amber: #F59E0B;
+    --green: #22C55E;
+    --white: #FFFFFF;
+    --muted: #94A3B8;
+    --surface: #1A2235;
+    --surface2: #222D42;
+    --border: rgba(255,255,255,0.08);
+    --gold: #F59E0B;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+  .urgency-strip {
+    background: #dc2626;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
+  #upsell-timer { color: #FDE68A; font-size: 18px; letter-spacing: 0.08em; }
+
+  .hero { padding: 60px 20px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+  .congrats {
+    display: inline-block;
+    background: rgba(34,197,94,0.15);
+    border: 1px solid rgba(34,197,94,0.4);
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .hero h1 .gold { color: var(--gold); }
+  .hero h1 .teal { color: var(--teal); }
+  .hero-sub { font-size: 19px; color: #CBD5E1; line-height: 1.6; max-width: 620px; margin: 0 auto; }
+
+  .offer-box {
+    max-width: 720px;
+    margin: 48px auto;
+    padding: 0 20px;
+  }
+  .offer-card {
+    background: var(--surface);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 48px 40px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(245,158,11,0.15);
+  }
+  .offer-badge {
+    position: absolute;
+    top: -16px; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), #D97706);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 22px;
+    border-radius: 30px;
+    white-space: nowrap;
+  }
+  .offer-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .offer-tagline { text-align: center; color: #CBD5E1; font-size: 17px; margin-bottom: 36px; }
+
+  .feature-list { list-style: none; margin-bottom: 36px; }
+  .feature-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list li .chk { color: var(--green); font-size: 18px; flex-shrink: 0; font-weight: 700; }
+  .feature-list li strong { display: block; color: var(--white); }
+  .feature-list li span { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+  .value-stack {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 36px;
+  }
+  .value-stack h3 { font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; text-align: center; }
+  .value-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(245,158,11,0.1);
+  }
+  .value-item:last-child { border-bottom: none; }
+  .value-item .val { color: var(--muted); text-decoration: line-through; }
+  .value-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0 0;
+    font-size: 17px;
+    font-weight: 800;
+    margin-top: 8px;
+  }
+  .value-total .yours { color: var(--green); }
+
+  .price-row { text-align: center; margin-bottom: 32px; }
+  .price-was { color: var(--muted); font-size: 20px; text-decoration: line-through; margin-bottom: 8px; }
+  .price-big { font-size: 80px; font-weight: 800; line-height: 1; color: var(--green); }
+  .price-big sup { font-size: 32px; vertical-align: super; }
+  .price-note { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+  .btn-yes {
+    display: block;
+    background: linear-gradient(135deg, var(--green) 0%, #16A34A 100%);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 22px 40px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 32px rgba(34,197,94,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .btn-yes::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); transform:skewX(-15deg); animation:shimmer 2.5s infinite; }
+  @keyframes shimmer { to { left:150%; } }
+  .btn-yes:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(34,197,94,0.55); }
+  .btn-yes .sub { display:block; font-size:13px; font-weight:600; opacity:0.85; font-family:'Barlow',sans-serif; text-transform:none; letter-spacing:0; margin-top:4px; }
+
+  .no-thanks {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+  }
+  .no-thanks a {
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--muted);
+    transition: color 0.2s;
+  }
+  .no-thanks a:hover { color: var(--electric); }
+
+  .urgency-note { text-align:center; color:#FDA4AF; font-size:14px; margin-top:12px; font-weight:600; }
+
+  footer { text-align:center; padding:32px 20px; font-size:13px; color:var(--muted); border-top:1px solid var(--border); }
+  footer a { color:var(--muted); text-decoration:none; margin:0 8px; }
+</style>
+</head>
+<body>
+
+<div class="urgency-strip">
+  ⚡ One-Time Offer — This Page Will NOT Appear Again. Timer: <span id="upsell-timer">14:59</span>
+</div>
+
+<section class="hero">
+  <div class="congrats">✓ Order Confirmed — One More Thing...</div>
+  <h1>
+    <span class="gold">Congratulations!</span> Now Let's 10X<br>
+    Your Results With the <span class="teal">Agency License</span>
+  </h1>
+  <p class="hero-sub">
+    You just unlocked LinkFlow Pro for yourself. Now upgrade to the Agency License and turn it into a recurring-revenue client service — delivered in minutes, billed at $500–$2,000/month.
+  </p>
+</section>
+
+<div class="offer-box">
+  <div class="offer-card">
+    <div class="offer-badge">🚀 One-Time Upgrade — $300 Off Regular Price</div>
+    <div class="offer-title">LinkFlow Agency License</div>
+    <p class="offer-tagline">Serve clients. Keep 100% of the profit. Get paid for what you already own.</p>
+
+    <ul class="feature-list">
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>25 Client Accounts</strong><span>Deploy and manage full LinkFlow Pro setups for up to 25 paying clients from your master dashboard.</span></div>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>White-Label Ready</strong><span>Remove all LinkFlow branding. Present the platform under your own agency brand. Your clients see your name, not ours.</span></div>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>Client Reporting Suite</strong><span>Auto-generate branded monthly reports showing link performance, traffic trends, and ROI. Professional deliverables in one click.</span></div>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>Agency Training & SOPs</strong><span>Complete onboarding playbooks, client pitch decks, pricing guides, and fulfillment SOPs. Productize your service from day one.</span></div>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>Priority Support Queue</strong><span>Jump the line. Agency customers get dedicated support with 4-hour response SLA on business days.</span></div>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><strong>DFY Client Onboarding Templates</strong><span>Welcome emails, contract templates, intake forms — everything you need to close and onboard clients professionally.</span></div>
+      </li>
+    </ul>
+
+    <div class="value-stack">
+      <h3>What You're Getting Today</h3>
+      <div class="value-item"><span>25 Client Accounts</span><span class="val">$297</span></div>
+      <div class="value-item"><span>White-Label Branding</span><span class="val">$97</span></div>
+      <div class="value-item"><span>Client Reporting Suite</span><span class="val">$47</span></div>
+      <div class="value-item"><span>Agency Training & SOPs</span><span class="val">$197</span></div>
+      <div class="value-item"><span>DFY Onboarding Templates</span><span class="val">$97</span></div>
+      <div class="value-total"><span>Total Value:</span><span class="yours">$735 — Yours for $197</span></div>
+    </div>
+
+    <div class="price-row">
+      <div class="price-was">Regular Price: $497</div>
+      <div class="price-big"><sup>$</sup>197</div>
+      <div class="price-note">One-time add-on — charged once, no monthly fees</div>
+    </div>
+
+    <a href="STRIPE_PAYMENT_LINK_UPSELL" class="btn-yes">
+      YES — Upgrade My Account to Agency License →
+      <span class="sub">Add $197 to my order and unlock 25 client accounts now</span>
+    </a>
+    <div class="urgency-note">⚠️ This offer disappears when the timer hits zero — it will not be shown again</div>
+
+    <div class="no-thanks">
+      <a href="../downsell/">No thanks, I don't want to serve clients or unlock agency features right now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 LinkFlow Pro | <a href="../compliance/">Earnings Disclaimer</a> <a href="../compliance/#privacy">Privacy</a> <a href="../compliance/#terms">Terms</a>
+</footer>
+
+<script>
+  // 15-minute countdown
+  let seconds = 899;
+  const el = document.getElementById('upsell-timer');
+  const tick = () => {
+    const m = String(Math.floor(seconds / 60)).padStart(2,'0');
+    const s = String(seconds % 60).padStart(2,'0');
+    el.textContent = `${m}:${s}`;
+    if (seconds > 0) { seconds--; setTimeout(tick, 1000); }
+    else { el.textContent = '00:00'; }
+  };
+  tick();
+</script>
+</body>
+</html>

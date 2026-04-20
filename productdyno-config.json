@@ -1,0 +1,105 @@
+{
+  "_note": "USE THIS FILE as reference when creating your ProductDyno collection manually. API key: get from productdyno.com/settings/api",
+  "_operator": "NextGen Web LLC — sdhawan1971@gmail.com",
+
+  "collection": {
+    "name": "LinkFlow Pro Members",
+    "description": "Complete link management platform — members area for all tiers",
+    "slug": "linkflow-pro",
+    "status": "active"
+  },
+
+  "products": [
+    {
+      "product_id": "linkflow-pro-fe",
+      "name": "LinkFlow Pro",
+      "description": "Core platform — unlimited bio pages, links, analytics, custom domains",
+      "price": 97.00,
+      "type": "one_time",
+      "access_type": "lifetime",
+      "delivery_method": "redirect_after_payment",
+      "redirect_url": "https://YOUR_VERCEL_DOMAIN/thankyou",
+      "members_area_url": "https://app.linkflow.io/login",
+
+      "bonus_deliverables": [
+        "Template Library — 50+ Pro Designs ($297 value)",
+        "Bio Page Conversion Playbook ($497 value)",
+        "Social Media Growth System ($297 value)",
+        "Link Management Automation Guide ($197 value)",
+        "30-Day Quick-Start Action Plan ($297 value)"
+      ],
+
+      "jvzoo_integration": {
+        "product_id": "JVZOO_FE_PRODUCT_ID",
+        "ipn_secret": "YOUR_JVZOO_IPN_SECRET"
+      },
+      "stripe_integration": {
+        "payment_link": "STRIPE_PAYMENT_LINK_FRONTEND",
+        "price_id": "STRIPE_PRICE_ID_FE"
+      }
+    },
+    {
+      "product_id": "linkflow-agency",
+      "name": "LinkFlow Agency License",
+      "description": "25 client accounts, white-label, reporting suite, agency training",
+      "price": 197.00,
+      "type": "one_time",
+      "access_type": "lifetime",
+      "is_upsell": true,
+      "parent_product_id": "linkflow-pro-fe",
+      "delivery_method": "redirect_after_payment",
+      "redirect_url": "https://YOUR_VERCEL_DOMAIN/thankyou-agency",
+      "members_area_url": "https://agency.linkflow.io/login",
+
+      "jvzoo_integration": {
+        "product_id": "JVZOO_OTO1_PRODUCT_ID"
+      },
+      "stripe_integration": {
+        "payment_link": "STRIPE_PAYMENT_LINK_UPSELL",
+        "price_id": "STRIPE_PRICE_ID_OTO1"
+      }
+    },
+    {
+      "product_id": "linkflow-accelerator",
+      "name": "LinkFlow Accelerator Pack",
+      "description": "DFY templates, conversion audit, analytics masterclass",
+      "price": 47.00,
+      "type": "one_time",
+      "access_type": "lifetime",
+      "is_downsell": true,
+      "parent_product_id": "linkflow-pro-fe",
+      "delivery_method": "redirect_after_payment",
+      "redirect_url": "https://YOUR_VERCEL_DOMAIN/thankyou-starter",
+      "members_area_url": "https://app.linkflow.io/login",
+
+      "jvzoo_integration": {
+        "product_id": "JVZOO_DS1_PRODUCT_ID"
+      },
+      "stripe_integration": {
+        "payment_link": "STRIPE_PAYMENT_LINK_DOWNSELL",
+        "price_id": "STRIPE_PRICE_ID_DS1"
+      }
+    }
+  ],
+
+  "ipn_configuration": {
+    "jvzoo_ipn_url": "https://YOUR_WEBHOOK_OR_GHL_ENDPOINT/jvzoo/ipn",
+    "productdyno_webhook_url": "Get from ProductDyno → Settings → Webhooks",
+    "ghl_integration": {
+      "tag_on_fe_purchase": "linkflow-pro-buyer",
+      "tag_on_oto1_purchase": "linkflow-agency-buyer",
+      "tag_on_ds1_purchase": "linkflow-accelerator-buyer",
+      "tag_on_refund": "linkflow-refund"
+    }
+  },
+
+  "setup_steps": [
+    "1. Log into productdyno.com → Collections → Create Collection",
+    "2. Name it 'LinkFlow Pro Members'",
+    "3. Create 3 products matching the definitions above",
+    "4. Under each product: Integrations → JVZoo → enter JVZoo product ID",
+    "5. Under each product: Integrations → Stripe → enter Stripe payment link",
+    "6. Enable IPN webhook and paste into JVZoo product settings",
+    "7. Test with a $1 test product before going live"
+  ]
+}

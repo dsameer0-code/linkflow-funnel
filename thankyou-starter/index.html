@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accelerator Pack Activated — You're In, LinkFlow Pro Member</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1120; --electric: #4F8EFF; --teal: #00D4B4;
+    --green: #22C55E; --white: #FFFFFF; --muted: #94A3B8;
+    --surface: #1A2235; --border: rgba(255,255,255,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); }
+
+  .header {
+    background: linear-gradient(135deg, rgba(0,212,180,0.12), rgba(79,142,255,0.08));
+    border-bottom: 1px solid rgba(0,212,180,0.2);
+    padding: 44px 20px 40px;
+    text-align: center;
+  }
+  .badge-wrap { display: flex; justify-content: center; margin-bottom: 20px; }
+  .starter-seal {
+    background: linear-gradient(135deg, var(--teal), var(--electric));
+    color: var(--navy); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 8px 24px; border-radius: 40px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 0 32px rgba(0,212,180,0.3);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 32px rgba(0,212,180,0.3); } 50% { box-shadow: 0 0 52px rgba(0,212,180,0.5); } }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(28px,5vw,52px); font-weight: 900; text-transform: uppercase; line-height: 1.05; margin-bottom: 14px; }
+  h1 .teal { color: var(--teal); }
+  .sub { font-size: 18px; color: #CBD5E1; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 52px 20px 72px; }
+
+  .access-box { background: var(--surface); border: 2px solid rgba(0,212,180,0.3); border-radius: 16px; padding: 36px; margin-bottom: 30px; box-shadow: 0 0 48px rgba(0,212,180,0.07); }
+  .access-box h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--teal); margin-bottom: 22px; }
+  .steps { display: flex; flex-direction: column; gap: 12px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .step-num { width: 36px; height: 36px; flex-shrink: 0; background: linear-gradient(135deg, var(--teal), var(--electric)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; color: var(--navy); }
+  .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .step .action-btn { display:inline-block; margin-top:9px; background:linear-gradient(135deg,var(--teal),var(--electric)); color:var(--navy); font-size:12px; font-weight:800; text-decoration:none; padding:7px 15px; border-radius:6px; text-transform:uppercase; letter-spacing:0.06em; transition:transform 0.15s; }
+  .step .action-btn:hover { transform:translateY(-1px); }
+
+  /* PACK CONTENTS */
+  .pack-box { background: linear-gradient(135deg, rgba(0,212,180,0.08), rgba(0,212,180,0.03)); border: 1px solid rgba(0,212,180,0.2); border-radius: 14px; padding: 28px; margin-bottom: 28px; }
+  .pack-box h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
+  .pack-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(0,212,180,0.1); font-size: 14px; }
+  .pack-item:last-child { border-bottom: none; }
+  .pack-item::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .pack-item strong { display: block; color: var(--white); margin-bottom: 2px; }
+  .pack-item span { color: var(--muted); }
+
+  /* UPGRADE NUDGE */
+  .upgrade-nudge { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 28px; }
+  .upgrade-nudge p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .upgrade-nudge a { color: var(--electric); font-weight: 600; text-decoration: none; }
+
+  /* SUPPORT */
+  .support-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; text-align: center; }
+  .support-box h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .support-box p { color: var(--muted); font-size: 14px; }
+  .support-box a { color: var(--electric); text-decoration: none; font-weight: 600; }
+
+  footer { text-align: center; padding: 28px 20px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); text-decoration: none; margin: 0 8px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge-wrap">
+    <div class="starter-seal">✓ Accelerator Pack — Activated</div>
+  </div>
+  <h1>You're In — <span class="teal">LinkFlow Pro</span> + Accelerator Pack</h1>
+  <p class="sub">Your order is confirmed. LinkFlow Pro is active and your Accelerator Pack resources are ready in the Members Area.</p>
+</div>
+
+<div class="container">
+
+  <div class="access-box">
+    <h2>📧 Access Your Account</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Check Your Email</h3>
+          <p>Login credentials incoming from <strong>support@linkflow.io</strong>. Check spam/promotions if not in inbox within 5 minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Log In and Set Your Password</h3>
+          <p>Use the link in your email. On first login you'll set a permanent password. Your LinkFlow Pro and Accelerator Pack are both immediately accessible.</p>
+          <a href="https://app.linkflow.io/login" class="action-btn" target="_blank">→ Go to Dashboard</a>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Find Your Accelerator Pack</h3>
+          <p>Dashboard → Members Area → Accelerator Pack. All 3 resources (templates, conversion training, analytics masterclass) are there.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Build Your First Bio Page</h3>
+          <p>Use one of the Accelerator Pack templates to launch your first page. The conversion guide shows you how to configure it for maximum CTR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pack-box">
+    <h2>📦 Your Accelerator Pack — What's Inside</h2>
+    <div class="pack-item">
+      <div><strong>DFY Page Templates Pack</strong><span>12 niche-specific bio page templates — coaches, consultants, creators, local biz. Import in one click.</span></div>
+    </div>
+    <div class="pack-item">
+      <div><strong>Conversion Optimization Audit</strong><span>Step-by-step video walkthrough for maximum click-through. Includes A/B testing framework.</span></div>
+    </div>
+    <div class="pack-item">
+      <div><strong>Advanced Analytics Masterclass</strong><span>90-minute training: read your data, identify what's converting, double down on it.</span></div>
+    </div>
+  </div>
+
+  <div class="upgrade-nudge">
+    <p>Want to serve clients and build a recurring revenue stream with LinkFlow?<br>
+    The <a href="mailto:agency@linkflow.io">Agency License upgrade</a> is available — email us and we'll send you a direct link at the member price.</p>
+  </div>
+
+  <div class="support-box">
+    <h3>Need Help?</h3>
+    <p>📧 <a href="mailto:support@linkflow.io">support@linkflow.io</a> — 24–48 hour response. Include your order number from your JVZoo receipt.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 LinkFlow Pro · NextGen Web LLC
+  <br style="margin-top:6px;">
+  <a href="../compliance/">Earnings Disclaimer</a>
+  <a href="../compliance/#privacy">Privacy Policy</a>
+  <a href="../compliance/#terms">Terms of Service</a>
+  <a href="mailto:support@linkflow.io">Support</a>
+</footer>
+
+</body>
+</html>
