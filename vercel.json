@@ -45,6 +45,10 @@
     {
       "source": "/contact",
       "destination": "/contact/index.html"
+    },
+    {
+      "source": "/compliance-review",
+      "destination": "/compliance-review/index.html"
     }
   ]
 }
