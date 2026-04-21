@@ -1,25 +1,50 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/", "dest": "/sales/index.html" },
-    { "src": "/sales", "dest": "/sales/index.html" },
-    { "src": "/upsell", "dest": "/upsell/index.html" },
-    { "src": "/downsell", "dest": "/downsell/index.html" },
-    { "src": "/bonus", "dest": "/bonus/index.html" },
-    { "src": "/thankyou", "dest": "/thankyou/index.html" },
-    { "src": "/thankyou-agency", "dest": "/thankyou-agency/index.html" },
-    { "src": "/thankyou-starter", "dest": "/thankyou-starter/index.html" },
-    { "src": "/compliance", "dest": "/compliance/index.html" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
-  "headers": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
-      ]
+      "source": "/",
+      "destination": "/sales/index.html"
+    },
+    {
+      "source": "/sales",
+      "destination": "/sales/index.html"
+    },
+    {
+      "source": "/upsell",
+      "destination": "/upsell/index.html"
+    },
+    {
+      "source": "/downsell",
+      "destination": "/downsell/index.html"
+    },
+    {
+      "source": "/thankyou",
+      "destination": "/thankyou/index.html"
+    },
+    {
+      "source": "/compliance",
+      "destination": "/compliance/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms/index.html"
+    },
+    {
+      "source": "/disclaimer",
+      "destination": "/disclaimer/index.html"
+    },
+    {
+      "source": "/dmca",
+      "destination": "/dmca/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
     }
   ]
 }
