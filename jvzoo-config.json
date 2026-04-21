@@ -1,9 +1,10 @@
 {
-  "_note": "USE THIS FILE to configure JVZoo products manually. Replace all PLACEHOLDER values before going live.",
+  "_note": "LIVE CONFIG — FE product confirmed. OTO1/DS1 pending creation in JVZoo.",
   "_operator": "NextGen Web LLC — sdhawan1971@gmail.com",
+  "_last_updated": "2026-04-20",
 
   "funnel_name": "LinkFlow Pro Complete Funnel",
-  "jvzoo_seller_id": "YOUR_JVZOO_SELLER_ID",
+  "jvzoo_seller_id": "0",
 
   "products": [
     {
@@ -13,15 +14,19 @@
       "price": 97.00,
       "currency": "USD",
       "payment_type": "one_time",
-      "jvzoo_product_id": "ASSIGN_AFTER_CREATION",
+      "jvzoo_product_id": "429525",
+      "jvzoo_button_id": "6",
+      "jvzoo_seller_id": "0",
+      "buy_link": "https://www.jvzoo.com/b/0/429525/6",
+      "button_image": "https://i.jvzoo.com/0/429525/6",
       "affiliate_commission_pct": 50,
       "instant_affiliate_commission": true,
+      "status": "LIVE",
 
-      "sales_page_url": "https://YOUR_VERCEL_DOMAIN/sales",
-      "checkout_url": "STRIPE_PAYMENT_LINK_FRONTEND",
-      "thank_you_url": "https://YOUR_VERCEL_DOMAIN/upsell",
+      "sales_page_url": "https://linkflow-funnel.vercel.app/sales",
+      "thank_you_url": "https://linkflow-funnel.vercel.app/upsell",
 
-      "_note_ty": "FE thank_you_url goes to /upsell — JVZoo redirects buyer there after purchase to show OTO1"
+      "_note_ty": "IMPORTANT: Set this as Thank You URL in JVZoo dashboard for product 429525 — redirects buyer to OTO1"
     },
     {
       "step": 2,
@@ -30,16 +35,14 @@
       "price": 197.00,
       "currency": "USD",
       "payment_type": "one_time",
-      "jvzoo_product_id": "ASSIGN_AFTER_CREATION",
+      "jvzoo_product_id": "PENDING_CREATION",
+      "buy_link": "JVZOO_OTO1_BUY_LINK_PENDING",
       "affiliate_commission_pct": 50,
-      "requires_frontend_purchase": true,
+      "status": "PENDING — create in JVZoo as child of 429525",
 
-      "upsell_page_url": "https://YOUR_VERCEL_DOMAIN/upsell",
-      "checkout_url": "STRIPE_PAYMENT_LINK_UPSELL",
-      "thank_you_url": "https://YOUR_VERCEL_DOMAIN/thankyou-agency",
-      "decline_redirect_url": "https://YOUR_VERCEL_DOMAIN/downsell",
-
-      "_note_flow": "Accept → /thankyou-agency | Decline → /downsell (OTO1 DS)"
+      "upsell_page_url": "https://linkflow-funnel.vercel.app/upsell",
+      "thank_you_url": "https://linkflow-funnel.vercel.app/thankyou-agency",
+      "decline_redirect_url": "https://linkflow-funnel.vercel.app/downsell"
     },
     {
       "step": 3,
@@ -48,35 +51,33 @@
       "price": 47.00,
       "currency": "USD",
       "payment_type": "one_time",
-      "jvzoo_product_id": "ASSIGN_AFTER_CREATION",
+      "jvzoo_product_id": "PENDING_CREATION",
+      "buy_link": "JVZOO_DS1_BUY_LINK_PENDING",
       "affiliate_commission_pct": 50,
-      "shown_on_oto1_decline": true,
+      "status": "PENDING — create in JVZoo as downsell child",
 
-      "downsell_page_url": "https://YOUR_VERCEL_DOMAIN/downsell",
-      "checkout_url": "STRIPE_PAYMENT_LINK_DOWNSELL",
-      "thank_you_url": "https://YOUR_VERCEL_DOMAIN/thankyou-starter",
-      "decline_redirect_url": "https://YOUR_VERCEL_DOMAIN/thankyou",
-
-      "_note_flow": "Accept → /thankyou-starter | Decline → /thankyou (base TY)"
+      "downsell_page_url": "https://linkflow-funnel.vercel.app/downsell",
+      "thank_you_url": "https://linkflow-funnel.vercel.app/thankyou-starter",
+      "decline_redirect_url": "https://linkflow-funnel.vercel.app/thankyou"
     }
   ],
 
   "funnel_flow": {
-    "diagram": "Visitor → /sales → Stripe ($97) → /upsell → Accept($197)→/thankyou-agency OR Decline→/downsell → Accept($47)→/thankyou-starter OR Decline→/thankyou",
-    "entry_url": "https://YOUR_VERCEL_DOMAIN/sales",
-    "jvzoo_ipn_url": "https://YOUR_WEBHOOK_OR_GHL_ENDPOINT/jvzoo/ipn"
+    "diagram": "Visitor → /sales → JVZoo ($97) → /upsell → Accept($197)→/thankyou-agency OR Decline→/downsell → Accept($47)→/thankyou-starter OR Decline→/thankyou",
+    "entry_url": "https://linkflow-funnel.vercel.app/sales",
+    "jvzoo_ipn_url": "PENDING — add your IPN/webhook URL here"
   },
 
-  "payment_processors": ["stripe"],
-  "jvzoo_payment_processor": "stripe_via_jvzoo",
+  "payment_processors": ["jvzoo"],
+  "stripe_removed": true,
 
-  "setup_steps": [
-    "1. Create 3 separate JVZoo products (FE, OTO1, DS1)",
-    "2. Link them as a funnel in JVZoo → My Products → Funnel Builder",
-    "3. Set FE thank_you_url to /upsell (not /thankyou — buyer sees OTO first)",
-    "4. Set OTO1 decline URL to /downsell",
-    "5. Set DS1 decline URL to /thankyou",
-    "6. Enable JVZoo IPN and point to your GHL webhook for auto-tagging",
-    "7. Replace YOUR_VERCEL_DOMAIN with your actual deployed domain"
+  "next_steps": [
+    "1. JVZoo dashboard → Product 429525 → Edit → set Thank You URL to https://linkflow-funnel.vercel.app/upsell",
+    "2. Create OTO1 product 'LinkFlow Agency License' $197 as child of 429525",
+    "3. Create DS1 product 'LinkFlow Accelerator Pack' $47 as downsell",
+    "4. Paste OTO1 buy link into upsell/index.html replacing JVZOO_OTO1_BUY_LINK_PENDING",
+    "5. Paste DS1 buy link into downsell/index.html replacing JVZOO_DS1_BUY_LINK_PENDING",
+    "6. Run: vercel --prod to deploy",
+    "7. SECURITY: Rotate ProductDyno API key at productdyno.com/settings/api"
   ]
 }
